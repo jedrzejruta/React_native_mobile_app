@@ -42,3 +42,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Bottom navigation component
 	- Second and third page screen
 	- Global style file for future reusage
+
+## [1.1.1] - 2020-04-01
+
+### Fixed
+
+	- GlobalStyle file is now exporting many style components
+
+### Added 
+
+	- Home screen image
