@@ -12,6 +12,7 @@ export const CustomView = styled.View`
 
 export const CustomText = styled.Text`
 	display: flex;
+	alignItems: center;
 	text-align: center;
 	color: ${Colors.black};
 	font-size: 20px;
