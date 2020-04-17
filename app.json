@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Blank Template (TypeScript)",
+    "name": "expo react-native ToDo app",
     "slug": "todoapp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
