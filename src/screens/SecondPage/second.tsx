@@ -1,20 +1,21 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {Text, View, Button} from 'react-native';
 
 import * as Global from '../../components/GlobalStyle';
 
-interface ISecondPage {}
+import Form from '../../components/Form';
+import ToDoList from '../../components/ToDoList';
 
-const Second: FC<ISecondPage> = () => {
-	const nav = useNavigation();
+const Second = ({navigation}) => {
+	const [formView, setFormView] = useState<boolean>(false);
 	return (
 		<Global.CustomView>
-			<Text> Druga strona </Text>
-			<Button title="Home screen" onPress={() => {
-				nav.navigate('Welcome');
-			}}
-			/>
+			{formView ? (
+				<Form switchView={setFormView}/>
+			) : (
+				<ToDoList switchView={setFormView}/>
+			)}
 		</Global.CustomView>
 	);
 };
