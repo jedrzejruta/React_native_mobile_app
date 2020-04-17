@@ -24,7 +24,9 @@ const Welcome: FC<IWelcomeProps> = props => {
         <Global.CustomView>
 			<Global.CustomText>Witam witam </Global.CustomText>
 			<Image source={foto} style={{ width: 100, height: 100}}></Image>
+			<Text>Zdjęcie ma być okrągłe, np. logo appki</Text>
             <WelcomeText>Welcome {props.myProps}</WelcomeText>
+			<Global.CustomText>Trochę tekstu o aplikacji, strona startowa</Global.CustomText>
 			<Button title="Second Page" onPress={() => {
 				navi.navigate('Second');
 			}}
