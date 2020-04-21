@@ -6,6 +6,8 @@ import { useDispatch } from 'react-redux';
 import { addNewListElem } from '../actions/ToDoListActions';
 import { ISingleElList } from '../interfaces/ISingleElList';
 
+import * as Global from '../components/GlobalStyle';
+
 type addNewListElem = ReturnType<typeof addNewListElem>;
 
 const Form: FC<{switchView(formView: boolean)}> = props => {
@@ -13,10 +15,10 @@ const Form: FC<{switchView(formView: boolean)}> = props => {
 	const [nameInput, setNameInput] = useState<string>('');
 	const [descInput, setDescInput] = useState<string>('');
 
-	const nameValueChange = (txt) => {
+	const nameValueChange = (txt: { nativeEvent: { text: React.SetStateAction<string>; }; }) => {
 		setNameInput(txt.nativeEvent.text);
 	}
-	const descValueChange = (txt) => {
+	const descValueChange = (txt: { nativeEvent: { text: React.SetStateAction<string>; }; }) => {
 		setDescInput(txt.nativeEvent.text);
 	}
 
@@ -30,11 +32,11 @@ const Form: FC<{switchView(formView: boolean)}> = props => {
 	}
 
 	return (
-		<View>
+		<Global.ListView>
 			<TextInput value={nameInput} onChange={nameValueChange} placeholder='Name'/>
 			<TextInput value={descInput} onChange={descValueChange} placeholder='Description'/>
 			<Button title='Dodaj' onPress={saveData}/>
-		</View>
+		</Global.ListView>
 	)
 };
 
