@@ -10,13 +10,13 @@ import ToDoList from '../../components/ToDoList';
 const Second = ({navigation}) => {
 	const [formView, setFormView] = useState<boolean>(false);
 	return (
-		<Global.CustomView>
+		<View>
 			{formView ? (
 				<Form switchView={setFormView}/>
 			) : (
 				<ToDoList switchView={setFormView}/>
 			)}
-		</Global.CustomView>
+		</View>
 	);
 };
 

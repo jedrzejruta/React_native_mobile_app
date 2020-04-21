@@ -13,9 +13,56 @@ const defaultState = (): IToDoListReducer => ({
 	{
 		name: 'Drugi',
 		description: 'Drugi description'
-	}]
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	{
+		name: 'Drugi',
+		description: 'Drugi description'
+	},
+	]
 });
 
+
+//add action to delete element
 export default (state = defaultState(), action: any): IToDoListReducer => {
     switch (action.type) {
         case actionTypes.SET_NEW_ELEM: {
