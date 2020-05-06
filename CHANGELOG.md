@@ -60,3 +60,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- ToDo list view component
 	- Form view component
 	- list state reducers and interfaces
+
+## [1.2.1] - 2020-04-24
+
+### Fixed
+
+	- Fix package manager conflicts
+	- Repair project version problems
+
+## [1.2.1] - 2020-05-06
+
+### Added
+
+	- BottomTab icons and colors
+	- Remove element from ToDo list by id
