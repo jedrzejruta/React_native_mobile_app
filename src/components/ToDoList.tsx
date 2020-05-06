@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { View,Text, Button, FlatList } from 'react-native';
+import { View,Text, Button, FlatList, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { useScrollToTop } from '@react-navigation/native';
 import styled from 'styled-components/native';
@@ -21,7 +21,6 @@ const TempView = styled.View`
 
 type removeListElem = ReturnType<typeof removeListElem>;
 
-
 const ToDoList: FC<{switchView(formView: boolean)}> = props => {
 	const ToDoListState = useSelector<IState , IToDoListReducer>(state => state.ToDoList);
 	const goToForm = () => {
@@ -30,6 +29,7 @@ const ToDoList: FC<{switchView(formView: boolean)}> = props => {
 	const dispatch = useDispatch();
 	const removeData = (id: number) => {
 		dispatch<removeListElem>(removeListElem(id));
+		alert(`Task has been deleted`);
 	}
 	const ref = React.useRef(null);
 	useScrollToTop(ref);
@@ -47,7 +47,7 @@ const ToDoList: FC<{switchView(formView: boolean)}> = props => {
 				<Global.SingleElListView>
 					<Text>{item.name}</Text>
 					<Text>{item.description}</Text>
-					<Button title='delete' onPress={() => removeData(item.id)}></Button>
+					<Button title='delete' onPress={() => removeData(item.id)}/>
 				</Global.SingleElListView>
 			}
 			

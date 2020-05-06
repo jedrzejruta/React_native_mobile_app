@@ -1,16 +1,41 @@
 import React, { FC } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 import Welcome from '../screens/Welcome/index';
 import Second from '../screens/SecondPage/second';
 import Third from '../screens/ThirdPage/third';
+
+import colors from '../constans/Colors';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNav: FC = () => {
 	return (
 		<Tab.Navigator
-			initialRouteName="Welcome"
+			screenOptions={({ route }) => ({
+				//tabBarLabel: {} add label global
+				tabBarIcon: ({focused, color, size}) => {
+					let iconName;
+					
+					if(route.name === 'Welcome'){
+						iconName = 'ios-home';
+					}
+					else if(route.name === 'Second')
+					iconName = focused ? 'ios-list-box' : 'ios-list';
+					else if(route.name === 'Third'){
+						iconName = focused 
+						? 'ios-information-circle'
+						: 'ios-information-circle-outline';
+					}
+					return <Ionicons name={iconName} size={size} color={color}/>
+				},
+			})}
+			tabBarOptions={{
+				activeBackgroundColor: `${colors.ghostwhite}`,
+				activeTintColor: `${colors.deepskyblue}`,
+				inactiveTintColor: `${colors.silver}`
+			}}
 		>
 			<Tab.Screen
 				name="Welcome"
@@ -29,10 +54,9 @@ const BottomNav: FC = () => {
 			<Tab.Screen
 				name="Third"
 				component={Third}
-				// options={{ 
-				// 	tabBarLabel: 'Third Page' //optional display name
-					//tabBarIcons TODO
-				// }}
+				options={{
+					tabBarLabel: 'About' //optional disp name
+				}}
 			/>
 		</Tab.Navigator>
 	);
