@@ -2,12 +2,10 @@ import styled from 'styled-components/native';
 
 import Layout from '../constans/Layout';
 import Colors from '../constans/Colors';
-import { ScrollView } from 'react-native';
-
 
 //add flex
 export const CustomView = styled.View`
-	backgroundColor: red;
+	backgroundColor: white;
 	margin-top: ${Layout.statusBar}px;
 	height: ${Layout.window.height}px;
 `;
@@ -20,6 +18,14 @@ export const CustomText = styled.Text`
 	font-size: 20px;
 `;
 
+export const FlatView = styled.FlatList.attrs( () => ({
+	contentContainerStyle: {
+		alignItems: 'center'
+	},
+}))`
+	width: ${Layout.window.width}px;
+`;
+
 export const ListView = styled.ScrollView.attrs( () => ({
 	contentContainerStyle: {
 		alignItems: 'center',
@@ -29,8 +35,10 @@ export const ListView = styled.ScrollView.attrs( () => ({
 `;//bottom margin here
 
 export const SingleElListView = styled.View`
+	border-radius: 25px;
 	border: 1px solid black;
-	width: 100px;
+	width: 150px;
 	margin: 0 0 10px 0;
-	padding: 2px;
+	background: white;
+	padding: 15px;
 `;
