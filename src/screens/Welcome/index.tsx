@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import {Image, Text, View, Button } from 'react-native';
+import {Image, Text, View, Button, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -21,7 +21,7 @@ interface IWelcomeProps {
 const Welcome: FC<IWelcomeProps> = props => {
 	const navi = useNavigation();
     return (
-        <Global.CustomView>
+        <Global.ListView>
 			<Global.CustomText>Witam witam </Global.CustomText>
 			<Image source={foto} style={{ width: 100, height: 100}}></Image>
 			<Text>Zdjęcie ma być okrągłe, np. logo appki</Text>
@@ -31,7 +31,22 @@ const Welcome: FC<IWelcomeProps> = props => {
 				navi.navigate('Second');
 			}}
 			/>
-        </Global.CustomView>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+			<Text>Lorem ipsum dorem itum dlalalalaa</Text>
+
+        </Global.ListView>
     );
 };
 
