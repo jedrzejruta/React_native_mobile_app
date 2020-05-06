@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { TextInput, View, Button } from 'react-native';
+import { TextInput,Text, View, Button } from 'react-native';
 
 import { useDispatch } from 'react-redux';
 
@@ -11,21 +11,22 @@ import * as Global from '../components/GlobalStyle';
 type addNewListElem = ReturnType<typeof addNewListElem>;
 
 const Form: FC<{switchView(formView: boolean)}> = props => {
+
 	const dispatch = useDispatch();
 	const [nameInput, setNameInput] = useState<string>('');
 	const [descInput, setDescInput] = useState<string>('');
-
 	const nameValueChange = (txt: { nativeEvent: { text: React.SetStateAction<string>; }; }) => {
 		setNameInput(txt.nativeEvent.text);
 	}
 	const descValueChange = (txt: { nativeEvent: { text: React.SetStateAction<string>; }; }) => {
 		setDescInput(txt.nativeEvent.text);
 	}
-
+	
 	const saveData = () => {
 		dispatch<addNewListElem>(addNewListElem({
 			name: nameInput,
-			description: descInput
+			description: descInput,
+			id: Date.now()
 		} as ISingleElList
 		))
 		props.switchView(false);

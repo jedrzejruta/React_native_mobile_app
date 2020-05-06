@@ -6,59 +6,23 @@ export interface IToDoListReducer {
 }
 
 const defaultState = (): IToDoListReducer => ({
-    ToDoList: [{
+    ToDoList: [
+	{
 		name: 'Pierwszy',
-		description: 'Pierwszy description'
+		description: 'Pierwszy description',
+		id: 1
 	},
 	{
 		name: 'Drugi',
-		description: 'Drugi description'
+		description: 'Drugi description',
+		id: 2
 	},
 	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	{
-		name: 'Drugi',
-		description: 'Drugi description'
-	},
-	]
+		name: 'Trzeci',
+		description: 'Trzeci description',
+		id: 3
+	}
+]
 });
 
 
@@ -70,7 +34,13 @@ export default (state = defaultState(), action: any): IToDoListReducer => {
                 ...state,
                 ToDoList: [...state.ToDoList, action.newElem]
             };
-        }
+		}
+		case actionTypes.DEL_ELEM: {
+			return {
+				...state,
+				ToDoList: state.ToDoList.filter(el => el.id !== action.id)
+			}
+		}
         default: {
             return state;
         }
