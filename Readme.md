@@ -6,6 +6,7 @@
 - **assets** (img, fonts etc.)
 - **components** (only re useable part of code)
 - **constans** (only const variable)
+- **customs** (modules import declaration)
 - **interfaces** (typing for typescript)
 - **reducers** (all reducers for redux)
 - **screens** (all apps screens (pages))
@@ -25,7 +26,7 @@
     - go to root folder
     - install yarn if you do not have
     - yarn install
-    - npm install expo-cli --global
+    - yarn global add expo-cli
     - expo start --android/ expo start --ios
     - open http://localhost:19002 - Expo DevTools
     - click 'Tunnel' in lower left corner screen
@@ -34,7 +35,7 @@
 3. Go to app in your phone
 4. Scan QR code or click on link
 5. Wait for download
-6. Test your app :) -> hot reload is default after every time if you save file.
+6. Test your app :) -> hot reload is default after every time you save file.
 7. Building apk/ipa
     - expo build:android / expo build:ios (https://docs.expo.io/versions/latest/distribution/building-standalone-apps)
     - you can see progress: https://expo.io/builds
