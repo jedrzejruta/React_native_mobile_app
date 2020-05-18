@@ -14,22 +14,21 @@ const BottomNav: FC = () => {
 	return (
 		<Tab.Navigator
 			screenOptions={({ route }) => ({
-				//tabBarLabel: {} add label global
+				// tabBarLabel: {} add label global
 				tabBarIcon: ({focused, color, size}) => {
 					let iconName;
-					
-					if(route.name === 'Welcome'){
+
+					if (route.name === 'Welcome') {
 						iconName = 'ios-home';
-					}
-					else if(route.name === 'Second')
-					iconName = focused ? 'ios-list-box' : 'ios-list';
-					else if(route.name === 'Third'){
-						iconName = focused 
+					} else if (route.name === 'Second')
+						iconName = focused ? 'ios-list-box' : 'ios-list';
+					else if (route.name === 'Third') {
+						iconName = focused
 						? 'ios-information-circle'
 						: 'ios-information-circle-outline';
 					}
-					return <Ionicons name={iconName} size={size} color={color}/>
-				},
+					return <Ionicons name={iconName} size={size} color={color}/>;
+				}
 			})}
 			tabBarOptions={{
 				activeBackgroundColor: `${colors.ghostwhite}`,
@@ -38,29 +37,28 @@ const BottomNav: FC = () => {
 			}}
 		>
 			<Tab.Screen
-				name="Welcome"
+				name='Welcome'
 				component={Welcome}
 				options={{
 					tabBarLabel: 'Home'
 				}}
 			/>
 			<Tab.Screen
-				name="Second"
+				name='Second'
 				component={Second}
 				options={{
 					tabBarLabel: 'Second Page'
 				}}
 			/>
 			<Tab.Screen
-				name="Third"
+				name='Third'
 				component={Third}
 				options={{
-					tabBarLabel: 'About' //optional disp name
+					tabBarLabel: 'About' // optional disp name
 				}}
 			/>
 		</Tab.Navigator>
 	);
 };
-
 
 export default BottomNav;

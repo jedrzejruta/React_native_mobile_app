@@ -2,11 +2,11 @@ import * as actionTypes from '../actions/types/ToDoListTypes';
 import  { ISingleElList } from '../interfaces/ISingleElList';
 
 export interface IToDoListReducer {
-    ToDoList: ISingleElList[];
+	ToDoList: ISingleElList[];
 }
 
 const defaultState = (): IToDoListReducer => ({
-    ToDoList: [
+	ToDoList: [
 	{
 		name: 'Pierwszy',
 		description: 'Pierwszy description',
@@ -25,24 +25,23 @@ const defaultState = (): IToDoListReducer => ({
 ]
 });
 
-
-//add action to delete element
+// add action to delete element
 export default (state = defaultState(), action: any): IToDoListReducer => {
-    switch (action.type) {
-        case actionTypes.SET_NEW_ELEM: {
-            return {
-                ...state,
-                ToDoList: [...state.ToDoList, action.newElem]
-            };
+	switch (action.type) {
+		case actionTypes.SET_NEW_ELEM: {
+			return {
+				...state,
+				ToDoList: [...state.ToDoList, action.newElem]
+			};
 		}
 		case actionTypes.DEL_ELEM: {
 			return {
 				...state,
 				ToDoList: state.ToDoList.filter(el => el.id !== action.id)
-			}
+			};
 		}
-        default: {
-            return state;
-        }
-    }
+		default: {
+		return state;
+		}
+	}
 };
