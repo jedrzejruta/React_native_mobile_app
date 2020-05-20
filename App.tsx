@@ -8,13 +8,13 @@ import Main from './src/Main';
 
 export default function App() {
 
-    const getContacts = () => {
-        Contacts.getContactsAsync();
-    };
+	const getContacts = () => {
+		Contacts.getContactsAsync();
+	};
 
-    return (
-        <Provider store={store}>
-            <Main />
-        </Provider>
-    );
+	return (
+		<Provider store={store}>
+			<Main />
+		</Provider>
+	);
 }

@@ -1,5 +1,5 @@
 export default {
-    white: '#FFF',
+	white: '#FFF',
 	black: '#000',
 	skyblue: '#87ceeb',
 	deepskyblue: '#00bfff',
