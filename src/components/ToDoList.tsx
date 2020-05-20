@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, SafeAreaView, Image, Platform } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { useScrollToTop } from '@react-navigation/native';
-import styled from 'styled-components/native';
+import Colors from '../constans/Colors';
 
 import { IState } from '../reducers/index';
 import { IToDoListReducer  } from '../reducers/toDoListReducer';
@@ -12,12 +12,7 @@ import { ISingleElList } from '../interfaces/ISingleElList';
 import * as Global from '../components/GlobalStyle';
 import { removeListElem } from '../actions/ToDoListActions';
 
-const TempView = styled.View`
-	background-color: red;
-	alignItems: center;
-	margin-top: 23px;
-	margin-bottom: 70px;
-`;
+import button from '../assets/button.png';
 
 type removeListElem = ReturnType<typeof removeListElem>;
 
@@ -29,37 +24,38 @@ const ToDoList: FC<{switchView(formView: boolean)}> = props => {
 	const dispatch = useDispatch();
 	const removeData = (id: number) => {
 		dispatch<removeListElem>(removeListElem(id));
-		alert(`Task has been deleted`);
 	};
 	const ref = React.useRef(undefined);
 	useScrollToTop(ref);
 	// View ref={ref}>
 	return (
-		<TempView>
-			{// console.log(ToDoListState.ToDoList) //check console.log what is ToDoListState
-			}
-			<Button title='Dodaj nowy' onPress={goToForm} />
+		<Global.SafeView>
 			<Global.FlatView
-				ref={ref}
-				keyExtractor = {(item: ISingleElList, index: number) => index.toString()} // make keyextractor work for id as number
-				data={ToDoListState.ToDoList}
-				renderItem={({item}: {item: ISingleElList}) => // add interface
+			ref={ref}
+			keyExtractor = {(item: ISingleElList, index: number) => index.toString()} // make keyextractor work for id as number
+			data={ToDoListState.ToDoList}
+			renderItem={({item}: {item: ISingleElList}) =>
 				<Global.SingleElListView>
-					<Text>{item.name}</Text>
-					<Text>{item.description}</Text>
-					<Button title='delete' onPress={() => removeData(item.id)}/>
+					<Text style={{borderWidth: 1, margin: 2, textAlign: 'center'}}>{item.name}</Text>
+					<Text style={{borderWidth: 1, margin: 2}}>{item.description}</Text>
+					<TouchableOpacity onLongPress={() => removeData(item.id)} style={{backgroundColor: Colors.deepskyblue, margin: 2, padding: 10}}>
+						<Text>Delete</Text>
+					</TouchableOpacity>
 				</Global.SingleElListView>
 			}
 			/>
+				<TouchableOpacity style={{position: 'absolute', top: 400, right: 30}} onPress={goToForm}>
+					<Image source={button} style={{width: 70, height: 70}}/>
+				</TouchableOpacity>
+		</Global.SafeView>
 
-			{/* {ToDoListState.ToDoList.map((el: ISingleElList, index: number) =>
+			/* {ToDoListState.ToDoList.map((el: ISingleElList, index: number) =>
 			<Global.SingleElListView key={index}>
 				<Text style={{padding: 5}}>{el.name}</Text>
 				<Text style={{padding: 5}}>{el.description}</Text>
 				<Text>{el.id}</Text>
 			</Global.SingleElListView>
-			)} */}
-		</TempView>
+			)} */
 	);
 };
 
