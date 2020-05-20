@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import {Image, Text, View, Button, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useScrollToTop } from '@react-navigation/native';
 
 import Colors from '../../constans/Colors';
 
@@ -20,10 +20,12 @@ interface IWelcomeProps {
 
 const Welcome: FC<IWelcomeProps> = props => {
 	const navi = useNavigation();
+	const ref = React.useRef(undefined);
+	useScrollToTop(ref);
 	return (
-		<Global.ListView>
-			<Global.CustomText>Witam witam </Global.CustomText>
-			<Image source={foto} style={{width: 150, height: 150}}></Image>
+		<Global.ListView ref={ref}>
+			<Image source={foto} style={{width: 100, height: 100}}></Image>
+			<Global.CustomText>Jędrzej Ruta</Global.CustomText>
 			<Text>Zdjęcie ma być okrągłe, np. logo appki</Text>
 			<WelcomeText>Welcome {props.myProps}</WelcomeText>
 			<Global.CustomText>Trochę tekstu o aplikacji, strona startowa</Global.CustomText>

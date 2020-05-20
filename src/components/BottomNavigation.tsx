@@ -16,7 +16,7 @@ const BottomNav: FC = () => {
 			screenOptions={({ route }) => ({
 				// tabBarLabel: {} add label global
 				tabBarIcon: ({focused, color, size}) => {
-					let iconName;
+					let iconName: string;
 
 					if (route.name === 'Welcome') {
 						iconName = 'ios-home';
@@ -33,7 +33,7 @@ const BottomNav: FC = () => {
 			tabBarOptions={{
 				activeBackgroundColor: `${colors.ghostwhite}`,
 				activeTintColor: `${colors.deepskyblue}`,
-				inactiveTintColor: `${colors.silver}`
+				inactiveTintColor: `${colors.black}`
 			}}
 		>
 			<Tab.Screen

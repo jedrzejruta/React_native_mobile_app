@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { TextInput, Text, View, Button, TouchableWithoutFeedback } from 'react-native';
+import { TextInput, Text, View, Button, TouchableOpacity} from 'react-native';
 
 import { useDispatch } from 'react-redux';
 
@@ -36,9 +36,9 @@ const Form: FC<{ switchView(formView: boolean) }> = props => {
 		<Global.CustomView>
 			<Global.CustomTextInput value={nameInput} onChange={nameValueChange} placeholder='Name' />
 			<Global.CustomTextInput value={descInput} onChange={descValueChange} placeholder='Description' />
-			<TouchableWithoutFeedback onPress={saveData}>
+			<TouchableOpacity style={{	borderWidth: 1, marginTop: 2, padding: 10, width: 100}} onPress={saveData}>
 				<Global.CustText2>Dodaj</Global.CustText2>
-			</TouchableWithoutFeedback>
+			</TouchableOpacity>
 		</Global.CustomView>
 	);
 };
