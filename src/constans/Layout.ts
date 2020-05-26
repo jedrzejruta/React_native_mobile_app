@@ -5,16 +5,16 @@ const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
 
 const wp = (percentage: number) => {
-  const value = (percentage * width) / 100;
-  return Math.round(value);
+	const value = (percentage * width) / 100;
+	return Math.round(value);
 };
 
 export default {
-  window: {
-    width,
-    height
-  },
-  wp,
-  statusBar: Constants.statusBarHeight,
-  isSmallDevice: width < 375
+	window: {
+		width,
+		height
+	},
+wp,
+statusBar: Constants.statusBarHeight,
+isSmallDevice: width < 375
 };

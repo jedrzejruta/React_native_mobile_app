@@ -41,7 +41,7 @@ export default (state = defaultState(), action: any): IToDoListReducer => {
 			};
 		}
 		default: {
-		return state;
+			return state;
 		}
 	}
 };
