@@ -1,13 +1,11 @@
 import React, { FC, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {Text, View, Button} from 'react-native';
-
-import * as Global from '../../components/GlobalStyle';
+import { View } from 'react-native';
 
 import Form from '../../components/Form';
 import ToDoList from '../../components/ToDoList';
 
-const Second = ({navigation}) => {
+const List = ({navigation}) => {
 	const [formView, setFormView] = useState<boolean>(false);
 	return (
 		<View>
@@ -20,4 +18,4 @@ const Second = ({navigation}) => {
 	);
 };
 
-export default Second;
+export default List;

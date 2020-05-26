@@ -2,11 +2,12 @@ import React, { FC } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import Welcome from '../screens/Welcome/index';
-import Second from '../screens/SecondPage/second';
-import Third from '../screens/ThirdPage/third';
+import Home from '../screens/Home/index';
+import List from '../screens/ToDoScreen/list';
+import About from '../screens/About/about';
 
 import colors from '../constans/Colors';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,11 +19,11 @@ const BottomNav: FC = () => {
 				tabBarIcon: ({focused, color, size}) => {
 					let iconName: string;
 
-					if (route.name === 'Welcome') {
+					if (route.name === 'Home') {
 						iconName = 'ios-home';
-					} else if (route.name === 'Second')
+					} else if (route.name === 'List')
 						iconName = focused ? 'ios-list-box' : 'ios-list';
-					else if (route.name === 'Third') {
+					else if (route.name === 'About') {
 						iconName = focused
 						? 'ios-information-circle'
 						: 'ios-information-circle-outline';
@@ -31,31 +32,26 @@ const BottomNav: FC = () => {
 				}
 			})}
 			tabBarOptions={{
-				activeBackgroundColor: `${colors.ghostwhite}`,
-				activeTintColor: `${colors.deepskyblue}`,
-				inactiveTintColor: `${colors.black}`
+				activeBackgroundColor: `${colors.darkblue}`,
+				activeTintColor: `${colors.white}`,
+				inactiveTintColor: `${colors.darkblue}`,
+				inactiveBackgroundColor: `${colors.white}`
 			}}
 		>
 			<Tab.Screen
-				name='Welcome'
-				component={Welcome}
-				options={{
-					tabBarLabel: 'Home'
+				name='Home'
+				component={Home}
+			/>
+			<Tab.Screen
+				name='List'
+				component={List}
+				options= {{
+					tabBarLabel: 'ToDo List'
 				}}
 			/>
 			<Tab.Screen
-				name='Second'
-				component={Second}
-				options={{
-					tabBarLabel: 'Second Page'
-				}}
-			/>
-			<Tab.Screen
-				name='Third'
-				component={Third}
-				options={{
-					tabBarLabel: 'About' // optional disp name
-				}}
+				name='About'
+				component={About}
 			/>
 		</Tab.Navigator>
 	);
