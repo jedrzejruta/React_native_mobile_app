@@ -11,8 +11,8 @@
 - **reducers** (all reducers for redux)
 - **screens** (all apps screens (pages))
     - **[Welcome]** (home screen)
-	- **[SecondPage]** (toDo list screen)
-	- **[ThirdPage]** (about screen)
+	- **[ToDoScreen]** (toDo list screen)
+	- **[About]** (about screen)
 - **tools** (reuseable tools)
 
 ## **Usage**
