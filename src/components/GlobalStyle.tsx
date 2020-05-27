@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-// import { Platform } from 'react-native';
 
 import Layout from '../constans/Layout';
 import Colors from '../constans/Colors';
 
 export const DeviceWidth: number = Layout.window.width;
 export const DeviceHeight: number = Layout.window.height;
-// justify-content: center;
-// add flex
+
 export const SafeView = styled.SafeAreaView`
 	backgroundColor: ${Colors.darkblue};
 	paddingTop: ${Layout.statusBar}px;
@@ -20,7 +18,6 @@ export const CustomView = styled.View`
 	height: ${Layout.window.height}px;
 `;
 
-// make common style for textinput and text button
 export const CustText2 = styled.Text`
 	textAlign: center;
 	color: ${Colors.white};
@@ -116,5 +113,3 @@ export const AboutImage = styled.Image`
 	margin: 0 5px 0 5px;
 	resizeMode: contain;
 `;
-	// width: ${DeviceWidth / 4}px;
-	// height: ${DeviceHeight / 10}px;

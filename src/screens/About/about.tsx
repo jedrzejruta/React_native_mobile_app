@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { useScrollToTop } from '@react-navigation/native';
-import { Text, Image, View, Button, ScrollView } from 'react-native';
 
 import { SafeView, ListView, AboutPageView, AboutImage, AboutPageText, CustomText } from '../../components/GlobalStyle';
 import styled from 'styled-components';
@@ -8,7 +7,6 @@ import styled from 'styled-components';
 import foto2 from '../../assets/foto2.png';
 
 interface IAboutPage { }
-// borderRightWidth: 1px;
 
 const TextWrapper = styled.View`
 	flex: 1;

@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import { TextInput, Text, View, Button, TouchableOpacity} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addNewListElem } from '../actions/ToDoListActions';
 import { ISingleElList } from '../interfaces/ISingleElList';
 
-import { SafeView, CustomView, CustomText, CustomTextInput, CustText2, FormAddTask} from '../components/GlobalStyle';
+import { SafeView, CustomView, CustomText, CustomTextInput, CustText2, FormAddTask } from '../components/GlobalStyle';
 import Colors from '../constans/Colors';
 
 type addNewListElem = ReturnType<typeof addNewListElem>;

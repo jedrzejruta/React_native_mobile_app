@@ -14,7 +14,7 @@ const BottomNav: FC = () => {
 	return (
 		<Tab.Navigator
 			screenOptions={({ route }) => ({
-				// tabBarLabel: {} add label global
+
 				tabBarIcon: ({focused, color, size}) => {
 					let iconName: string;
 

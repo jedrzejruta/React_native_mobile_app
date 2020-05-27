@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { Text, TouchableOpacity, SafeAreaView, Image, Platform, View, Button } from 'react-native';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useScrollToTop } from '@react-navigation/native';
@@ -12,14 +11,13 @@ import { IToDoListReducer  } from '../reducers/toDoListReducer';
 
 import { ISingleElList } from '../interfaces/ISingleElList';
 
-import * as Global from '../components/GlobalStyle';
+import { SafeView, FlatView, SingleElListView, ListTextEl, AddTaskButton, AddButtonImg} from '../components/GlobalStyle';
 import { removeListElem } from '../actions/ToDoListActions';
 
 import button from '../assets/button.png';
 
 type removeListElem = ReturnType<typeof removeListElem>;
 
-// u need to wrap text to align verticallyc
 const TextViewWrap = styled.View`
 	flex: 3;
 `;
@@ -56,32 +54,31 @@ const ToDoList: FC<{switchView(formView: boolean)}> = props => {
 	useScrollToTop(ref);
 
 	return (
-		<Global.SafeView>
-			<Global.FlatView
+		<SafeView>
+			<FlatView
 			ref={ref}
-			keyExtractor = {(item: ISingleElList, index: number) => index.toString()} // make keyextractor work for id as number
+			keyExtractor = {(item: ISingleElList, index: number) => index.toString()}
 			data={ToDoListState.ToDoList}
-			renderItem={({item}: {item: ISingleElList}) =>
-				<Global.SingleElListView>
+			renderItem={ ( {item}: {item: ISingleElList} ) =>
+				<SingleElListView>
 					<TextViewWrap>
 						<TextWrapper style={{borderBottomWidth: 1, borderBottomColor: 'white'}}>
-							<Global.ListTextEl>{item.name}</Global.ListTextEl>
+							<ListTextEl>{item.name}</ListTextEl>
 						</TextWrapper>
 						<TextWrapper>
-							<Global.ListTextEl>{item.description}</Global.ListTextEl>
+							<ListTextEl>{item.description}</ListTextEl>
 						</TextWrapper>
 					</TextViewWrap>
 					<Touch onLongPress={() => removeData(item.id)}>
 						<MaterialIcons name='delete' size={36} color={Colors.darkblue}/>
 					</Touch>
-
-				</Global.SingleElListView>
+				</SingleElListView>
 			}
 			/>
-				<Global.AddTaskButton style={{position: 'absolute', top: 400, right: 30}} onPress={goToForm}>
-					<Global.AddButtonImg source={button}/>
-				</Global.AddTaskButton>
-		</Global.SafeView>
+				<AddTaskButton style={{position: 'absolute', top: 400, right: 30}} onPress={goToForm}>
+					<AddButtonImg source={button}/>
+				</AddTaskButton>
+		</SafeView>
 	);
 };
 

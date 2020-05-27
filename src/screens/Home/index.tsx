@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import {Image, Text, View, Button, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
-import { useScrollToTop } from '@react-navigation/native';
 
 import { SafeView, CustomText, DeviceHeight} from '../../components/GlobalStyle';
 import foto from '../../assets/foto.png';
@@ -19,9 +18,8 @@ const HomeText = styled.Text`
 	fontSize: 28px;
 	padding: 5px 0 5px 0;
 `;
-const LegendText = styled.Text`
+const LegendText = styled(HomeText)`
 	fontSize: 20px;
-	padding: 5px 0 5px 0;
 `;
 
 const HomeView = styled.View`
@@ -41,8 +39,6 @@ const HomeNameView = styled.View`
 `;
 
 const Home: FC<IWelcomeProps> = props => {
-	const ref = React.useRef(undefined);
-	useScrollToTop(ref);
 	return (
 		<SafeView>
 			<HomeView>
