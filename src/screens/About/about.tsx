@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
-import { useNavigation, useScrollToTop } from '@react-navigation/native';
+import { useScrollToTop } from '@react-navigation/native';
 import { Text, Image, View, Button, ScrollView } from 'react-native';
 
 import { SafeView, ListView, AboutPageView, AboutImage, AboutPageText, CustomText } from '../../components/GlobalStyle';
 import styled from 'styled-components';
 
 import foto2 from '../../assets/foto2.png';
-import Layout from '../../constans/Layout';
 
 interface IAboutPage { }
 // borderRightWidth: 1px;
@@ -18,9 +17,10 @@ const TextWrapper = styled.View`
 `;
 
 const About: FC<IAboutPage> = () => {
-	const nav = useNavigation();
+
 	const ref = React.useRef(undefined);
 	useScrollToTop(ref);
+
 	return (
 		<SafeView>
 			<ListView ref={ref}>
