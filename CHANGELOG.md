@@ -68,9 +68,55 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 	- Fix package manager conflicts
 	- Repair project version problems
 
-## [1.2.1] - 2020-05-06
+## [1.2.2] - 2020-05-06
 
 ### Added
 
 	- BottomTab icons and colors
 	- Remove element from ToDo list by id
+
+## [1.2.3] - 2020-05-16
+
+### Added 
+	
+	- Own splash screen
+	- Change splash screen color
+
+## [1.2.4] - 2020-05-18
+
+### Fixed
+
+	- TSLint is now working properly
+	- Fix linter errors
+
+### Added
+
+	- Declared .png extension module import
+
+## [1.2.5] - 2020-05-20
+
+### Added
+
+	- Custom 'add button' in ToDo list
+	- Picture in 'About' screen in different positions
+
+## [1.3.0] - 2020-05-24
+
+### Fixed
+
+	- Appropriate names of screens in whole app
+
+### Changed
+
+	- Bottom Naw tint colors
+
+## [2.0.0] - 2020-05-26
+
+### Added 
+
+	- Assync assets loading
+
+
+### Changed 
+
+	- App layout
