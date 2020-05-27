@@ -23,7 +23,7 @@ export const CustomView = styled.View`
 // make common style for textinput and text button
 export const CustText2 = styled.Text`
 	textAlign: center;
-	color: ${Colors.deepskyblue};
+	color: ${Colors.white};
 `;
 
 export const CustomText = styled.Text`
@@ -47,7 +47,7 @@ export const FormAddTask = styled(DeleteButton)`
 `;
 
 export const ListTextEl = styled(CustText2)`
-	textAlign: center;
+	textAlign: left;
 	color: ${Colors.white};
 `;
 
@@ -81,11 +81,11 @@ export const CustomTextInput = styled.TextInput.attrs({
 `;
 
 export const SingleElListView = styled.View.attrs({
-	// contentContainerStyle: {
-	// 	alignItems: 'center'
-	// }
+	contentContainerStyle: {
+		alignItems: 'center'
+	}
 })`
-	width: 90%;
+	margin: 0 20px 0 20px;
 	padding: 10px 20px 0 20px;
 	flexWrap: wrap;
 	flexDirection: row;

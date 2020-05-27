@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addNewListElem } from '../actions/ToDoListActions';
 import { ISingleElList } from '../interfaces/ISingleElList';
 
-import * as Global from '../components/GlobalStyle';
+import { SafeView, CustomView, CustomText, CustomTextInput, CustText2, FormAddTask} from '../components/GlobalStyle';
 import Colors from '../constans/Colors';
 
 type addNewListElem = ReturnType<typeof addNewListElem>;
@@ -39,19 +39,19 @@ const Form: FC<{ switchView(formView: boolean) }> = props => {
 	};
 
 	return (
-		<Global.SafeView>
-			<Global.CustomView>
-				<Global.CustomText>Add new task</Global.CustomText>
-				<Global.CustomTextInput value={nameInput} onChange={nameValueChange} placeholder='Name' />
-				<Global.CustomTextInput value={descInput} onChange={descValueChange} placeholder='Description' />
-				<Global.FormAddTask onPress={saveData}>
-					<Global.ListTextEl>Dodaj</Global.ListTextEl>
-				</Global.FormAddTask>
+		<SafeView>
+			<CustomView>
+				<CustomText>Add new task</CustomText>
+				<CustomTextInput value={nameInput} onChange={nameValueChange} placeholder='Name' />
+				<CustomTextInput value={descInput} onChange={descValueChange} placeholder='Description' />
+				<FormAddTask onPress={saveData}>
+					<CustText2>Dodaj</CustText2>
+				</FormAddTask>
 				<TouchableOpacity onPress={comeBack} style={{width: 150, height: 100, alignItems: 'center'}}>
 					<Entypo name='back' size={42} color={Colors.deepskyblue}/>
 				</TouchableOpacity>
-			</Global.CustomView>
-		</Global.SafeView>
+			</CustomView>
+		</SafeView>
 	);
 };
 
