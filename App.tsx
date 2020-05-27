@@ -6,7 +6,7 @@ import { Gyroscope } from 'expo-sensors';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Fonts from 'expo-font';
-import { Entypo, MaterialIcons } from '@expo/vector-icons';
+import { Entypo, MaterialIcons, Ionicons } from '@expo/vector-icons';
 
 import store from './src/tools/store';
 import Main from './src/Main';
@@ -28,7 +28,8 @@ export default function App() {
 
 		const icons = [
 			Entypo.font,
-			MaterialIcons.font
+			MaterialIcons.font,
+			Ionicons.font
 		];
 
 		const cacheFonts = icons.map(icon => {

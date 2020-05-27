@@ -7,7 +7,6 @@ import List from '../screens/ToDoScreen/list';
 import About from '../screens/About/about';
 
 import colors from '../constans/Colors';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Tab = createBottomTabNavigator();
 
