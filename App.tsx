@@ -22,7 +22,8 @@ export default function App() {
 	const _cacheResourcesAsync = async () => {
 		const images = [
 			require('./src/assets/foto.png'),
-			require('./src/assets/foto2.png')
+			require('./src/assets/foto2.png'),
+			require('./src/assets/button.png')
 		];
 
 		const icons = [
@@ -38,8 +39,7 @@ export default function App() {
 			return Asset.fromModule(image).downloadAsync();
 		});
 
-		await Promise.resolve(cacheImages);
-		await Promise.resolve(cacheFonts);
+		await Promise.all([...cacheImages, ...cacheFonts]);
 	};
 
 	return (
