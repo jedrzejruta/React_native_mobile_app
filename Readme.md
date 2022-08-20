@@ -1,5 +1,7 @@
 # ToDo Mobile App
 
+Simple TODO mobile application based on Expo and React Native
+
 ## **Folders Structure**
 
 - **actions** (actions for redux)
