@@ -17,6 +17,13 @@ Simple TODO mobile application based on Expo and React Native
 	- **[About]** (about screen)
 - **tools** (reuseable tools)
 
+## **Technologies**
+
+- **Expo**
+- **React Native**
+- **TypeScript**
+- **Redux**
+
 ## **Usage**
 
 1. Download and install expo app on your phone
